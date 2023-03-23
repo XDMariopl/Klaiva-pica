@@ -1,8 +1,5 @@
 package Picerija;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -13,7 +10,7 @@ public class Main {
 	static String[]topings={"-","Peperoni","mocorelas siers"};
 	static String[]whatpica={"Vezuva","Margarita","Havajiesu"};
 	static String[]drinks={"-","Coca-Cola","Sprite","Fanta"};
-	static String adrese,picaslieums,piedevas,dzeriens,pizzaName;
+	static String picaslieums,piedevas,dzeriens,pizzaName;
 	static ArrayList<Pica> pizza = new ArrayList<Pica>();
 	static int pizzaCount=0;
 	static boolean vienadas=true;
@@ -25,13 +22,12 @@ public class Main {
 		piedevas=(String) JOptionPane.showInputDialog(null,"Izvelies picas piedevas","Piedevas", JOptionPane.QUESTION_MESSAGE,null,topings,topings[0]);
 		dzeriens=(String) JOptionPane.showInputDialog(null,"Izvelies dzerienu","Dzerieni", JOptionPane.QUESTION_MESSAGE,null,drinks,drinks[0]);
 		pizza.add(new Pica(pizzaName,picaslieums,piedevas,dzeriens));
-		JOptionPane.showMessageDialog(null,pizza.get(pizzaCount).check());
-		pizza.get(pizzaCount).check();
-		
 	}
 	
 	static void pasutijums(){
-		adrese=(String)JOptionPane.showInputDialog("Ievadi uz kuru adresi sutisiet picu.");
+		String adrese=(String)JOptionPane.showInputDialog("Ievadi uz kuru adresi sutisiet picu.");
+		String StrCheck="";
+		int i=0;
 		do{
 		cikpicas=Integer.parseInt(JOptionPane.showInputDialog("Cik picas pasutisiet?"));
 		}while(cikpicas<=0);
@@ -40,27 +36,36 @@ public class Main {
 				vienadas=false;
 			}
 		}
-		
 		if(vienadas==true){
 			picasPas();
-			try {
-				FileReader fr = new FileReader("check.txt");
-				FileWriter fw = new FileWriter("check.txt");
-				BufferedReader br = new BufferedReader(fr);
-			fw.write(pizza.get(pizzaCount).check());
-			JOptionPane.showMessageDialog(null, br);
-			}catch(Exception e){
-				e.getStackTrace();		
-				}
+			StrCheck+=pizza.get(pizzaCount).check();
+			pizzaCount++;
+		}else{
+			for(i=0;i<cikpicas;i++){
+				picasPas();
+				StrCheck+=pizza.get(i).check()+"\n";
+			}
+			pizzaCount+=i;
+		}
+		JOptionPane.showMessageDialog(null, StrCheck+"\n"+adrese);
+	}
+	
+	static void uzvietas(){
+		do {
+			cikpicas=Integer.parseInt(JOptionPane.showInputDialog("Cik picas pasutisiet?"));
+		}while(cikpicas<=0);
+		if(cikpicas!=1){
+			if(JOptionPane.showInputDialog(null,"Vai visas picas bus vienadas","?",JOptionPane.QUESTION_MESSAGE,null,yesOrNo,yesOrNo[0])=="Ne"){
+				vienadas=false;
+			}
+		}
+		if(vienadas==true){
+			picasPas();
 		}else{
 			for(int i=0;i<cikpicas;i++){
 				picasPas();
 			}
 		}	
-	}
-	
-	static void uzvietas(){
-		
 	}
 
 	public static void main(String[] args) {
