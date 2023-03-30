@@ -45,7 +45,7 @@ public class Main {
 			pizzaCount++;
 			JOptionPane.showMessageDialog(null, StrCheck+"| *"+cikpicas+"\nbez PVN:"+sum+"\nar PVN:"+df.format(sum+(sum*0.21))+"\n"+adrese);
 		}else{
-			for(i=0+pizzaCount;i<cikpicas;i++){
+			for(i=0+pizzaCount;i<cikpicas+pizzaCount;i++){
 				picasPas();
 				sum+=pizza.get(i).picaSumma();
 				StrCheck+=pizza.get(i).check()+" | "+pizza.get(i).picaSumma()+"\n";
@@ -72,7 +72,7 @@ public class Main {
 			pizzaCount++;
 			JOptionPane.showMessageDialog(null, StrCheck+"| *"+cikpicas+"\nbez PVN: "+sum+"\nar PVN:"+df.format(sum+(sum*0.21)));
 		}else{
-			for(i=0+pizzaCount;i<cikpicas;i++){
+			for(i=0+pizzaCount;i<cikpicas+pizzaCount;i++){
 				picasPas();
 				sum+=pizza.get(i).picaSumma();
 				StrCheck+=pizza.get(i).check()+" | "+pizza.get(i).picaSumma()+"\n";

@@ -42,7 +42,7 @@ public class Pica {
 		}
 		return sum;
 	}
-	double sizeSumma(){
+	private double sizeSumma(){
 		double sum=0;
 		switch(picaSize) {
 		case "small":	sum-=2;	break;
@@ -51,7 +51,7 @@ public class Pica {
 		return sum;
 	}
 	
-	double toppingSumma(){
+	private double toppingSumma(){
 		double sum=0;
 		switch(picaTopings) {
 		case "Peperoni":	sum+=2.40;	break;
@@ -60,7 +60,7 @@ public class Pica {
 		return sum;
 	}
 	
-	double drinkSumma(){
+	private double drinkSumma(){
 		double sum=0;
 		switch(Drinks) {
 		case "Coca-Cola":	sum+=2;	break;
