@@ -6,4 +6,4 @@ Picerijas progama kura var pasutīt picas.:pizza:
 - [x] Picas objekts:pizza:
 - [x] Pasutīt picu ar piedevam	:cut_of_meat: + :pizza:
 - [x] Izvadīt pasutijum čeka	:page_with_curl:
-- [ ] Saglabāt čeku Faila  :arrow_down::page_with_curl:
+- [x] Saglabāt čeku Faila  :arrow_down::page_with_curl:
