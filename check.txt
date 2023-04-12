@@ -1,0 +1,23 @@
+Pica: Vezuva large mocorelas siers |Sprite || *5
+bez PVN:90.25
+ar PVN:109,20
+Beans-23
+___________________________________________
+Pica: Vezuva medium  | 10.0
+Pica: Havajiešu medium mocorelas siers |Sprite | | 15.05
+
+bez PVN: 25.05
+ar PVN:30,31
+Joe-81
+___________________________________________
+Pica: Vezuva medium mocorelas siers |Sprite || *2
+bez PVN:28.1
+ar PVN:34,00
+Beans-23
+___________________________________________
+Pica: Vezuva large mocorelas siers |Fanta | | 18.1
+Pica: Margarita medium Peperoni |Coca-Cola | | 13.4
+
+bez PVN: 31.5
+ar PVN: 38,12
+___________________________________________

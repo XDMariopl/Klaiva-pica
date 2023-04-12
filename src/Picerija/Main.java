@@ -1,5 +1,6 @@
 package Picerija;
 
+import java.io.FileWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -43,15 +44,31 @@ public class Main {
 			StrCheck+=pizza.get(pizzaCount).check();
 			sum=pizza.get(pizzaCount).picaSumma()*cikpicas;
 			pizzaCount++;
-			JOptionPane.showMessageDialog(null, StrCheck+"| *"+cikpicas+"\nbez PVN:"+sum+"\nar PVN:"+df.format(sum+(sum*0.21))+"\n"+adrese);
+			StrCheck=StrCheck+"| *"+cikpicas+"\nbez PVN:"+sum+"\nar PVN:"+df.format(sum+(sum*0.21))+"\n"+adrese;
+			try {
+				FileWriter fw = new FileWriter("check.txt",true);
+				fw.write(StrCheck+"\n___________________________________________\n");
+				fw.close();
+			}catch(Exception e) {
+				e.getStackTrace();
+			}
+			JOptionPane.showMessageDialog(null, StrCheck);
 		}else{
 			for(i=0+pizzaCount;i<cikpicas+pizzaCount;i++){
 				picasPas();
 				sum+=pizza.get(i).picaSumma();
 				StrCheck+=pizza.get(i).check()+" | "+pizza.get(i).picaSumma()+"\n";
 			}
+			StrCheck=StrCheck+"\nbez PVN: "+sum+"\nar PVN:"+df.format(sum+(sum*0.21))+"\n"+adrese;
+			try {
+				FileWriter fw = new FileWriter("check.txt",true);
+				fw.write(StrCheck+"\n___________________________________________\n");
+				fw.close();
+			}catch(Exception e) {
+				e.getStackTrace();
+			}
 			pizzaCount+=i;
-			JOptionPane.showMessageDialog(null, StrCheck+"\nbez PVN: "+sum+"\nar PVN:"+df.format(sum+(sum*0.21))+"\n"+adrese);
+			JOptionPane.showMessageDialog(null, StrCheck);
 		}
 	}
 	static void uzvietas(){
@@ -70,15 +87,31 @@ public class Main {
 			StrCheck+=pizza.get(pizzaCount).check();
 			sum=pizza.get(pizzaCount).picaSumma()*cikpicas;
 			pizzaCount++;
-			JOptionPane.showMessageDialog(null, StrCheck+"| *"+cikpicas+"\nbez PVN: "+sum+"\nar PVN:"+df.format(sum+(sum*0.21)));
+			StrCheck=StrCheck+"| *"+cikpicas+"\nbez PVN: "+sum+"\nar PVN:"+df.format(sum+(sum*0.21));
+			try {
+				FileWriter fw = new FileWriter("check.txt",true);
+				fw.write(StrCheck+"\n___________________________________________\n");
+				fw.close();
+			}catch(Exception e) {
+				e.getStackTrace();
+			}
+			JOptionPane.showMessageDialog(null, StrCheck);
 		}else{
 			for(i=0+pizzaCount;i<cikpicas+pizzaCount;i++){
 				picasPas();
 				sum+=pizza.get(i).picaSumma();
 				StrCheck+=pizza.get(i).check()+" | "+pizza.get(i).picaSumma()+"\n";
 			}
+			StrCheck=StrCheck+"\nbez PVN: "+sum+"\nar PVN: "+df.format(sum+(sum*0.21));
+			try {
+				FileWriter fw = new FileWriter("check.txt",true);
+				fw.write(StrCheck+"\n___________________________________________\n");
+				fw.close();
+			}catch(Exception e) {
+				e.getStackTrace();
+			}
 			pizzaCount+=i;
-			JOptionPane.showMessageDialog(null, StrCheck+"\nbez PVN: "+sum+"\nar PVN: "+df.format(sum+(sum*0.21)));
+			JOptionPane.showMessageDialog(null, StrCheck);
 		}
 	}
 
